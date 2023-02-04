@@ -1,0 +1,14 @@
+{
+    "recommendations": [
+        "mhutchie.git-graph",
+        "ms-python.python",
+        "ms-vscode.makefile-tools",
+        "sclu1034.justfile"
+    ]
+    /*
+     * Others that I like:
+     *   "github.vscode-pull-request-github",
+     *   "GitHub.remotehub",
+     *   "eamodio.gitlens"
+     */
+}

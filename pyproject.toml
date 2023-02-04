@@ -1,0 +1,49 @@
+[project]
+name = "py_typed_events"
+version = "0.0.1"
+authors = [
+    {name = "Andrew Bradley", email = "cspotcode@gmail.com"},
+]
+readme = "README.md"
+description = "C#-style events for python, with type hint and typechecking support."
+requires-python = ">=3.10"
+keywords = ["event", "delegate"]
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License"
+]
+# TODO learn how this works
+# dynamic = ["version", "description", "readme"]
+dynamic = []
+
+# No runtime deps
+dependencies = []
+
+# TODO learn how this works
+#[tool.setuptools.dynamic]
+#version = {attr = "my_project.VERSION"}
+#readme = {file = ["README.md"]}
+
+[tool.isort]
+profile = "black"
+src_paths = ["src"]
+add_imports = ["from __future__ import annotations"]
+
+[tool.pyright]
+include = ["src"]
+reportGeneralTypeIssues = "warning"
+typeCheckingMode = "basic"
+
+[tool.pdm]
+[tool.pdm.dev-dependencies]
+dev = [
+    "black==22.12.0",
+    "pre-commit==3.0.4",
+    "pyright==1.1.281",
+    "isort==5.10.1"
+]
+
+[build-system]
+requires = ["pdm-pep517>=1.0"]
+build-backend = "pdm.pep517.api"

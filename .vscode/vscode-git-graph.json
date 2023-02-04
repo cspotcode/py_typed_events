@@ -1,0 +1,20 @@
+{
+    "issueLinkingConfig": {
+        "issue": "#(\\d+)",
+        "url": "https://github.com/cspotcode/py_typed_events/issues/$1"
+    },
+    "pullRequestConfig": {
+        "provider": "github",
+        "hostRootUrl": "https://github.com",
+        "sourceRemote": "origin",
+        "sourceOwner": "cspotcode",
+        "sourceRepo": "py_typed_events",
+        "destRemote": "origin",
+        "destOwner": "cspotcode",
+        "destRepo": "py_typed_events",
+        "destProjectId": "",
+        "destBranch": "main",
+        "custom": null
+    },
+    "exportedAt": 1668179202265
+}
