@@ -1,4 +1,4 @@
-from src import event
+from py_typed_events import event
 
 class Emitter:
     def __init__(self):

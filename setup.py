@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 from py_typed_events import __version__
 
@@ -10,5 +10,5 @@ setup(
     author='Andrew Bradley',
     author_email='cspotcode@gmail.com',
 
-    py_modules=['py_typed_events'],
+    packages=find_packages(),
 )
