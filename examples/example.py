@@ -7,7 +7,10 @@ class Emitter:
     # Events are declared by decorating an abstract, *empty* method.
     # This declares the event signature, it is never executed!
     @event
-    def on_change(self, old_value: str, new_value: str): ...
+    def on_change(self, old_value: str, new_value: str):
+        """
+        Emitted every time the `value` changes, passing both old and new values.
+        """
 
     @property
     def value(self) -> str:

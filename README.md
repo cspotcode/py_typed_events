@@ -2,19 +2,23 @@
 
 Type-hinted events for python, inspired by C# events and delegates.
 
-For a complete example, see [`examples/example.py`](examples/example.py)
-
 ## Features
 
-- Full type hinting, typechecking, and docstring support.
-  - Hovering over an event will show the docstring.
-  - Typechecker can remind you when your event subscription is incompatible
-  with the event.
-- C# style `+=` and `-=` to add and remove subscriptions.
-  - `emitter.on_event += self.respond_to_event`
 - Describe events as decorated methods, similar to `@property`
+- Add and remove subscriptions with `+=` and `-=`, like C# events.
+  - `emitter.on_event += self.respond_to_event`
 - Subscribed methods are weakly held.
   - Subscribed instances will garbage collect automatically without needing to remove all their subscriptions.
+- Type hinting, typechecking, and docstring support.
+<!--
+  - Hovering over an event will show the docstring.
+  - Typechecker can remind you when your event subscription is incompatible.
+  with the event.
+-->
+
+## Usage
+
+For a complete example, see [`examples/example.py`](examples/example.py)
 
 ```python
 class Emitter:

@@ -1,7 +1,7 @@
 from __future__ import annotations
 from inspect import ismethod
 
-from typing import Callable, Generic, ParamSpec, TypeVar
+from typing import Any, Callable, Generic, ParamSpec, TypeVar
 from functools import partial
 from weakref import WeakMethod
 
@@ -24,18 +24,18 @@ class Event(Generic[P]):
         # https://github.com/pyglet/pyglet/blob/d89fa4466d7f5d2183eac91f4ab2bb5fb4db745e/pyglet/event.py#L140-L141
         self._subscribers: list[WeakMethod | Callable] = []
 
-    def append_listener(self, handler: Callable[P, None | bool]):
+    def append_listener(self, handler: Callable[P, Any]):
         return self.__iadd__(handler)
 
-    def __iadd__(self, handler: Callable[P, None | bool]):
+    def __iadd__(self, handler: Callable[P, Any]):
         subscription = WeakMethod(handler, self._remove_weak_method) if ismethod(handler) else handler # type: ignore
         self._subscribers.append(subscription)
         return self
 
-    def remove_listener(self, handler: Callable[P, None | bool]):
+    def remove_listener(self, handler: Callable[P, Any]):
         return self.__isub__(handler)
 
-    def __isub__(self, handler: Callable[P, None | bool]):
+    def __isub__(self, handler: Callable[P, Any]):
         # Iterate over a copy as we might mutate the list
         for subscription in list(self._subscribers):
             try:
