@@ -10,6 +10,9 @@ Type-hinted events for python, inspired by C# events and delegates.
 - Subscribed methods are weakly held.
   - Subscribed instances will garbage collect automatically without needing to remove all their subscriptions.
 - Type hinting, typechecking, and docstring support.
+  - F2 to rename an event will rename it everywhere.
+  - Typechecker will verify that you pass the correct args to `.emit()`.
+  - Typechecker will verify that subscribers accept the correct args.
 <!--
   - Hovering over an event will show the docstring.
   - Typechecker can remind you when your event subscription is incompatible.
