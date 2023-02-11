@@ -25,6 +25,9 @@ dependencies = []
 #version = {attr = "my_project.VERSION"}
 #readme = {file = ["README.md"]}
 
+[tool.black]
+line_length = 120
+
 [tool.isort]
 profile = "black"
 src_paths = ["src"]
@@ -38,7 +41,7 @@ typeCheckingMode = "basic"
 [tool.pdm]
 [tool.pdm.dev-dependencies]
 dev = [
-    "black==22.12.0",
+    "black==23.1.0",
     "pre-commit==3.0.4",
     "pyright==1.1.281",
     "isort==5.10.1"

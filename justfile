@@ -27,8 +27,9 @@ bootstrap:
 
 # Reformat all code
 fmt:
-    pdm run isort .
-    pdm run black $formatSources
+    # pdm run isort .
+    # pdm run black $formatSources
+    pdm run pre-commit run --all-files
 
 # Alias of lint
 check: lint
@@ -40,15 +41,11 @@ lint:
 
 # Run to install a git pre-commit hook. If installed, committing will error-out when code doesn't match the formatter.  `make fmt` or Ctrl+Shift+B can fix this.
 install-git-hooks:
-    pdm run python scripts/install-git-hooks.py
+    pdm run pre-commit install
 
 # Uninstall the pre-commit hook
 uninstall-git-hooks:
-    pdm run python scripts/uninstall-git-hooks.py
-
-# This is run by the pre-commit hook to verify formatting
-pre-commit:
-    @python scripts/pre-commit.py
+    pdm run pre-commit uninstall
 
 example:
     pdm run python -m examples.example
