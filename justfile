@@ -4,8 +4,6 @@ set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-c"]
 default:
     just --list --unsorted
 
-formatSources := "src"
-
 # Install some necessary development tools *globally* on Windows. Only use this for convenience if you understand what it will do.
 install-devtools-globally-windows:
     # Assumes https://scoop.sh/
@@ -27,17 +25,19 @@ bootstrap:
 
 # Reformat all code
 fmt:
-    # pdm run isort .
-    # pdm run black $formatSources
-    pdm run pre-commit run --all-files
+    pdm run isort .
+    pdm run black .
+    # Alternative
+    # pdm run pre-commit run --all-files
 
 # Alias of lint
 check: lint
 
-# Check code formatting
+# Check types and formatting
 lint:
     pdm run isort --check .
-    pdm run black --check $formatSources
+    pdm run black --check .
+    pdm run pyright
 
 # Run to install a git pre-commit hook. If installed, committing will error-out when code doesn't match the formatter.  `make fmt` or Ctrl+Shift+B can fix this.
 install-git-hooks:

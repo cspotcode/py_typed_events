@@ -30,20 +30,24 @@ line_length = 120
 
 [tool.isort]
 profile = "black"
-src_paths = ["src"]
+src_paths = ["py_typed_events", "examples", "tests"]
 add_imports = ["from __future__ import annotations"]
 
 [tool.pyright]
-include = ["src"]
 reportGeneralTypeIssues = "warning"
 typeCheckingMode = "basic"
+include = ["py_typed_events", "examples", "tests"]
+extraPaths = [
+  "__pypackages__/3.10/lib",
+  "__pypackages__/3.11/lib"
+]
 
 [tool.pdm]
 [tool.pdm.dev-dependencies]
 dev = [
     "black==23.1.0",
     "pre-commit==3.0.4",
-    "pyright==1.1.281",
+    "pyright==1.1.293",
     "isort==5.10.1"
 ]
 
