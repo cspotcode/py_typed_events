@@ -53,6 +53,11 @@ package manager.  For example, with `pip`:
 pip install git+https://github.com/cspotcode/py_typed_events.git
 ```
 
+## Reading material
+
+Microsoft's doc about the "observer" pattern, which can be implemented with events:  
+https://learn.microsoft.com/en-us/previous-versions/msp-n-p/ee817669(v=pandp.10)?redirectedfrom=MSDN
+
 ## Development
 
 Build script uses `just`: https://github.com/casey/just
